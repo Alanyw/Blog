@@ -1,0 +1,8 @@
+#Pycharm
+.idea
+
+#Django
+*.log
+local_setting.py
+
+
