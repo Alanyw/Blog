@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alanyw.cn</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static "css/alanyw.css" %}">
+    <script src="{% static "js/jquery-3.2.0.min.js" %}"></script>
+    <script src="{% static  "js/bootstrap.js" %}"></script>
+    <script>
+        $(document).ready(function () {
+            $(".article_intro:odd").css("background-color", "#03af6c");
+        })
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand " href="#" id="brand-jackson">Jackson.me</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right" id="nav-right">
+                <li><a href="#">Home</a></li>
+                <li role="presentation" class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                                            role="button" aria-haspopup="true" aria-expanded="false">Tags
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu" id="tags">
+                        <li><a href="">apresentatio</a></li>
+                        <li><a href="">apresentatio</a></li>
+                        <li><a href="">apresentatio</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+<div class="jumbotron">
+    <div class="container">
+        <div id="jumbotron-text">
+            <h2>HI THERE,</h2>
+            <h1>WELCOME TO ALANYW.CN!
+            </h1>
+            <h3>Source code, project demo and narcissism of a coder.
+            </h3>
+        </div>
+    </div>
+</div>
+{% if latest_article_list %}
+    {% for article in latest_article_list %}
+        <div class="article_intro">
+            <div class="container">
+                <div class="article_intro_pos">
+                    <div class="h1">{{ article.title }}</div>
+                    <div class="h4">{{ article.author }} / {{ article.pub_date }}</div>
+                    <div class="line"></div>
+                    <div class="glyphicon glyphicon-tags">{{ article.tag }}</div>
+                    <div class="h4">虽有 ITU-T 的 E.164 标准，然而，恰如浏览器之于 web 前端标准。总会有万万想不到。</div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+{#<div class="article_intro_green">#}
+{#    <div class="container">#}
+{#        <div class="article_intro_pos">#}
+{#            <div class="h1">国际手机号码的有效性校验</div>#}
+{#            <div class="h4">By Jackon Yang / Sat 05 November 2016</div>#}
+{#            <div class="line"></div>#}
+{#            <div class="glyphicon glyphicon-tags"></div>#}
+{#            <div class="h4">虽有 ITU-T 的 E.164 标准，然而，恰如浏览器之于 web 前端标准。总会有万万想不到。</div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#<div class="article_intro_white">#}
+{#    <div class="container">#}
+{#        <div class="article_intro_pos">#}
+{#            <div class="h1">国际手机号码的有效性校验</div>#}
+{#            <div class="h4">By Jackon Yang / Sat 05 November 2016</div>#}
+{#            <div class="line"></div>#}
+{#            <div class="glyphicon glyphicon-tags"></div>#}
+{#            <div class="h4">虽有 ITU-T 的 E.164 标准，然而，恰如浏览器之于 web 前端标准。总会有万万想不到。</div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#<div class="article_intro_green">#}
+{#    <div class="container">#}
+{#        <div class="article_intro_pos">#}
+{#            <div class="h1">国际手机号码的有效性校验</div>#}
+{#            <div class="h4">By Jackon Yang / Sat 05 November 2016</div>#}
+{#            <div class="line"></div>#}
+{#            <div class="glyphicon glyphicon-tags"></div>#}
+{#            <div class="h4">虽有 ITU-T 的 E.164 标准，然而，恰如浏览器之于 web 前端标准。总会有万万想不到。</div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#<div class="article_intro_white">#}
+{#    <div class="container">#}
+{#        <div class="article_intro_pos">#}
+{#            <div class="h1">国际手机号码的有效性校验</div>#}
+{#            <div class="h4">By Jackon Yang / Sat 05 November 2016</div>#}
+{#            <div class="line"></div>#}
+{#            <div class="glyphicon glyphicon-tags"></div>#}
+{#            <div class="h4">虽有 ITU-T 的 E.164 标准，然而，恰如浏览器之于 web 前端标准。总会有万万想不到。</div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#<div class="article_intro_green">#}
+{#    <div class="container">#}
+{#        <div class="article_intro_pos">#}
+{#            <div class="h1">国际手机号码的有效性校验</div>#}
+{#            <div class="h4">By Jackon Yang / Sat 05 November 2016</div>#}
+{#            <div class="line"></div>#}
+{#            <div class="glyphicon glyphicon-tags"></div>#}
+{#            <div class="h4">虽有 ITU-T 的 E.164 标准，然而，恰如浏览器之于 web 前端标准。总会有万万想不到。</div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+<div class="footer">
+    <div class="container">
+        <p class="text-center">Copyright © 2015 Jackon Yang All rights reserved.</p>
+    </div>
+</div>
+</body>
+</html>
