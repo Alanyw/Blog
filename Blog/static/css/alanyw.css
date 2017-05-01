@@ -79,3 +79,6 @@ body{
     margin-top: 40px;
     font-size: 20px;
 }
+.article_intro_pos a{
+    text-decoration: none;
+}
