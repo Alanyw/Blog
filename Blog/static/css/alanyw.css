@@ -44,7 +44,12 @@ body{
 }
 
 .article_intro_pos{
+    font-family: 'Open Sans',sans-serif ;
+    font-size: 18px;
     padding: 100px;
+}
+.article_intro_pos .h1,.h4{
+    margin: 15px auto;
 }
 .line{
     text-align: left;

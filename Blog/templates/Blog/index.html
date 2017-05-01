@@ -10,7 +10,9 @@
     <script src="{% static  "js/bootstrap.js" %}"></script>
     <script>
         $(document).ready(function () {
-            $(".article_intro:odd").css("background-color", "#03af6c");
+            $(".article_intro:odd").css({"background-color":"#03af6c","color":"#fff"});
+            $(".line:odd").css("background-color","#fff")
+
         })
     </script>
 </head>
@@ -61,74 +63,19 @@
         <div class="article_intro">
             <div class="container">
                 <div class="article_intro_pos">
-                    <div class="h1">{{ article.title }}</div>
-                    <div class="h4">{{ article.author }} / {{ article.pub_date }}</div>
+                    <div class="h1"><a href="{% url 'article:title' article.id %}"> {{ article.title }}</a></div>
+                    <div class="h4">By {{ article.author }} / {{ article.pub_date }}</div>
                     <div class="line"></div>
-                    <div class="glyphicon glyphicon-tags">{{ article.tag }}</div>
-                    <div class="h4">虽有 ITU-T 的 E.164 标准，然而，恰如浏览器之于 web 前端标准。总会有万万想不到。</div>
+                    <div class="glyphicon glyphicon-tags">  {{ article.tag }}</div>
+                    <div class="h4" id="h4">虽有 ITU-T 的 E.164 标准，然而，恰如浏览器之于 web 前端标准。总会有万万想不到。</div>
                 </div>
             </div>
         </div>
     {% endfor %}
 {% endif %}
-{#<div class="article_intro_green">#}
-{#    <div class="container">#}
-{#        <div class="article_intro_pos">#}
-{#            <div class="h1">国际手机号码的有效性校验</div>#}
-{#            <div class="h4">By Jackon Yang / Sat 05 November 2016</div>#}
-{#            <div class="line"></div>#}
-{#            <div class="glyphicon glyphicon-tags"></div>#}
-{#            <div class="h4">虽有 ITU-T 的 E.164 标准，然而，恰如浏览器之于 web 前端标准。总会有万万想不到。</div>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
-{#<div class="article_intro_white">#}
-{#    <div class="container">#}
-{#        <div class="article_intro_pos">#}
-{#            <div class="h1">国际手机号码的有效性校验</div>#}
-{#            <div class="h4">By Jackon Yang / Sat 05 November 2016</div>#}
-{#            <div class="line"></div>#}
-{#            <div class="glyphicon glyphicon-tags"></div>#}
-{#            <div class="h4">虽有 ITU-T 的 E.164 标准，然而，恰如浏览器之于 web 前端标准。总会有万万想不到。</div>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
-{#<div class="article_intro_green">#}
-{#    <div class="container">#}
-{#        <div class="article_intro_pos">#}
-{#            <div class="h1">国际手机号码的有效性校验</div>#}
-{#            <div class="h4">By Jackon Yang / Sat 05 November 2016</div>#}
-{#            <div class="line"></div>#}
-{#            <div class="glyphicon glyphicon-tags"></div>#}
-{#            <div class="h4">虽有 ITU-T 的 E.164 标准，然而，恰如浏览器之于 web 前端标准。总会有万万想不到。</div>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
-{#<div class="article_intro_white">#}
-{#    <div class="container">#}
-{#        <div class="article_intro_pos">#}
-{#            <div class="h1">国际手机号码的有效性校验</div>#}
-{#            <div class="h4">By Jackon Yang / Sat 05 November 2016</div>#}
-{#            <div class="line"></div>#}
-{#            <div class="glyphicon glyphicon-tags"></div>#}
-{#            <div class="h4">虽有 ITU-T 的 E.164 标准，然而，恰如浏览器之于 web 前端标准。总会有万万想不到。</div>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
-{#<div class="article_intro_green">#}
-{#    <div class="container">#}
-{#        <div class="article_intro_pos">#}
-{#            <div class="h1">国际手机号码的有效性校验</div>#}
-{#            <div class="h4">By Jackon Yang / Sat 05 November 2016</div>#}
-{#            <div class="line"></div>#}
-{#            <div class="glyphicon glyphicon-tags"></div>#}
-{#            <div class="h4">虽有 ITU-T 的 E.164 标准，然而，恰如浏览器之于 web 前端标准。总会有万万想不到。</div>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
 <div class="footer">
     <div class="container">
-        <p class="text-center">Copyright © 2015 Jackon Yang All rights reserved.</p>
+        <p class="text-center">Copyright © 2015 Alanyw All rights reserved.</p>
     </div>
 </div>
 </body>
