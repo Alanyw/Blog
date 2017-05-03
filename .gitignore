@@ -6,4 +6,4 @@
 local_setting.py
 *.pyc
 bin/
-
+virtualenv/
