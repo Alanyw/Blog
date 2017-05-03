@@ -1,13 +1,17 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-
 # Create your views here.
+from article.models import Article
+
+
 def index(request):
     return HttpResponse("Hello,world.You're at the article index")
 
 
-def title(request, title_id):
-    response = "You're looking at the results of article %s "
-    print(title_id)
-    return HttpResponse(response % title_id)
+def article_page(request, article_id):
+    try:
+        article = Article.objects.get(pk=article_id)
+    except:
+        None
+    return render(request, 'article/article_page.html', {'article': article})

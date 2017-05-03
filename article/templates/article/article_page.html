@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <title>Alanyw.cn</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static "../../../static/Blog/css/bootstrap.css" %}">
-    <link rel="stylesheet" href="{% static "../../../static/Blog/css/alanyw.css" %}">
-    <script src="{% static "../../../static/Blog/js/jquery-3.2.0.min.js" %}"></script>
-    <script src="{% static  "../../../static/Blog/js/bootstrap.js" %}"></script>
-    <script src="{% static  "../../../static/Blog/js/alanyw.js" %}"></script>
+    <link rel="stylesheet" href="{% static "article/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "article/css/alanyw.css" %}">
+    <link rel="stylesheet" href="{% static "article/css/default.css" %}">
+    <script src="{% static "article/js/jquery-3.2.0.min.js" %}"></script>
+    <script src="{% static  "article/js/bootstrap.min.js" %}"></script>
+    <script src="{% static  "article/js/alanyw.js" %}"></script>
+    <script src="{% static "article/js/highlight.pack.js" %}"></script>
+    <link rel="stylesheet" href="{% static "article/css/github.css" %}">
+    <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -52,21 +56,10 @@
         </div>
     </div>
 </div>
-{% if latest_article_list %}
-    {% for article in latest_article_list %}
-        <div class="article_intro">
-            <div class="container">
-                <div class="article_intro_pos">
-                    <div class="h1"><a href="{% url 'article:article_page' article.id %}" style="color:#333;"> {{ article.title }}</a></div>
-                    <div class="h4">By {{ article.author }} / {{ article.pub_date }}</div>
-                    <div class="line"></div>
-                    <div class="glyphicon glyphicon-tags">  {{ article.tag }}</div>
-                    <div class="h4" id="h4">虽有 ITU-T 的 E.164 标准，然而，恰如浏览器之于 web 前端标准。总会有万万想不到。</div>
-                </div>
-            </div>
-        </div>
-    {% endfor %}
-{% endif %}
+<div class="container">
+    {% load custom_markdown %}
+    {{ article.content|custom_markdown }}
+</div>
 <div class="footer">
     <div class="container">
         <p class="text-center">Copyright © 2015 Alanyw All rights reserved.</p>

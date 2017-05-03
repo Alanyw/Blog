@@ -38,16 +38,18 @@ body{
 #article_mess span{
     margin: 10px;
 }
-.article_intro_white{
+.article_intro{
 
     background-color: white;
 }
-.article_intro_green{
 
-    background-color: #03af6c;
-}
 .article_intro_pos{
+    font-family: 'Open Sans',sans-serif ;
+    font-size: 18px;
     padding: 100px;
+}
+.article_intro_pos .h1,.h4{
+    margin: 15px auto;
 }
 .line{
     text-align: left;
@@ -76,4 +78,7 @@ body{
 .footer p{
     margin-top: 40px;
     font-size: 20px;
+}
+.article_intro_pos a{
+    text-decoration: none;
 }
